@@ -1,5 +1,5 @@
 import ProjectForm from "../../components/ProjectForm/ProjectForm";
-import logo from "../../assets";
+import logo from "../../assets/logo.png";
 
 const Dashboard = () => {
   return (

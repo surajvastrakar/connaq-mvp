@@ -1,6 +1,5 @@
 import ProjectForm from "../../components/ProjectForm/ProjectForm";
-import logo from "./logo.png";
-
+import logo from `${process.env.PUBLIC_URL}/logo.png`;
 const Dashboard = () => {
   return (
     <div className="flex w-full gap-4 h-full">

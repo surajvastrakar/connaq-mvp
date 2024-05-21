@@ -1,4 +1,5 @@
 import ProjectForm from "../../components/ProjectForm/ProjectForm";
+import logo from "./logo.png";
 
 const Dashboard = () => {
   return (
@@ -7,7 +8,7 @@ const Dashboard = () => {
         <div className="h-full flex flex-col justify-between">
           <ProjectForm />
           <a href="https://connaqtech.com/" target="_blank" className="block">
-            <img src="/src/assets/logo.png" alt="logo" />
+            <img src={logo} alt="logo" />
           </a>
         </div>
       </div>

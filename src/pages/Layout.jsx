@@ -11,7 +11,7 @@ const Layout = () => {
       : "";
 
   return (
-    <div className="w-screen h-screen flex bg-primary text-white font-poppins text-base">
+    <div className="w-screen h-screen flex bg-primary text-white font-roboto text-base">
       <Navbar />
       <div className="w-[calc(100vw-72px)] py-4 pl-4 h-full flex flex-col gap-3">
         <div className="flex justify-between items-center pl-2 pr-4">

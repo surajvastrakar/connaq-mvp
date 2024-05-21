@@ -9,6 +9,9 @@ export default {
       fontSize: {
         base: "14px",
       },
+      colors: {
+        primary: "#03577b",
+      },
     },
   },
   plugins: [],

@@ -12,7 +12,7 @@ const ProjectForm = () => {
   return (
     <form
       onSubmit={submitHandler}
-      className="flex flex-col gap-3 bg-white text-black p-3 rounded-xl"
+      className="flex flex-col gap-3 bg-white text-black p-3 rounded-xl custom-shadow"
       ref={formRef}
     >
       <div>
@@ -51,7 +51,7 @@ const ProjectForm = () => {
       <div className="text-right mt-4">
         <button
           type="submit"
-          className="rounded-xl bg-[#03577b] border border-[#03577b] font-semibold text-white px-4 py-1 hover:scale-110 active:bg-white active:text-[#03577b]"
+          className="rounded-xl bg-[#03577b] border border-[#03577b] font-semibold text-white px-4 py-1 hover:scale-110 active:bg-white active:text-[#03577b] custom-shadow"
         >
           Generate
         </button>

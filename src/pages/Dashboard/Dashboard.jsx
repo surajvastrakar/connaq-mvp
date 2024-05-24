@@ -1,5 +1,6 @@
 import ProjectForm from "../../components/ProjectForm/ProjectForm";
 import logo from "/logo.png";
+import comingSoon from "/coming-soon.jpg";
 const Dashboard = () => {
   return (
     <div className="flex w-full gap-4 h-full">
@@ -11,15 +12,9 @@ const Dashboard = () => {
           </a>
         </div>
       </div>
-      <div
-        className="w-[80vw] h-[89vh] rounded-s-xl overflow-x-auto text-black scrollbar"
-        style={{ transform: "rotateX(180deg)" }}
-      >
-        <div
-          className="min-w-[200vw] bg-white h-full"
-          style={{ transform: "rotateX(180deg)" }}
-        >
-          <h5 className="font-bold text-7xl py-64 ps-80">Coming soon</h5>
+      <div className="w-[80vw] h-[89vh] rounded-s-xl overflow-auto text-black scrollbar">
+        <div className="w-[110%]  bg-white">
+          <img src={comingSoon} alt="coming soon" className="w-full" />
         </div>
       </div>
     </div>

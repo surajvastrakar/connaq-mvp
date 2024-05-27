@@ -37,6 +37,20 @@ const ProjectForm = () => {
           className="w-3/5 rounded-xl border-2 border-gray-300 p-2 bg-[#e1e1e1]"
         />
       </div>
+
+      <div>
+        <label htmlFor="projectDuration" className="block font-bold mb-1">
+          Project Duration (in Months)
+        </label>
+        <input
+          type="number"
+          name="projectDuration"
+          id="projectDuration"
+          className="w-3/5 rounded-xl border-2 border-gray-300 p-2 bg-[#e1e1e1]"
+          min={1}
+        />
+      </div>
+
       <div>
         <label htmlFor="size" className="block font-bold mb-1">
           Size (sq ft)
@@ -48,6 +62,7 @@ const ProjectForm = () => {
           className="w-3/5 rounded-xl border-2 border-gray-300 p-2 bg-[#e1e1e1]"
         />
       </div>
+
       <div className="text-right mt-4">
         <button
           type="submit"

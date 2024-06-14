@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Gantt from "frappe-gantt";
-import "./GanttChart.css";
 
 const GanttChart = ({ allTasks }) => {
   useEffect(() => {

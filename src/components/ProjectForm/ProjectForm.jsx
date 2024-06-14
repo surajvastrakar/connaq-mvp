@@ -1,12 +1,13 @@
 import { useRef } from "react";
 
-const ProjectForm = () => {
+const ProjectForm = ({ submitForm }) => {
   const formRef = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
     const formData = new FormData(formRef.current);
-    console.log(Object.fromEntries(formData.entries())); // Log form data as an object
+    submitForm(Object.fromEntries(formData.entries()));
+    formRef.current.reset();
   };
 
   return (
@@ -28,19 +29,20 @@ const ProjectForm = () => {
       </div>
       <div>
         <label htmlFor="startDate" className="block font-bold mb-1">
-          Start date
+          Start date*
         </label>
         <input
           type="date"
           id="startDate"
           name="startDate"
           className="w-3/5 rounded-xl border-2 border-gray-300 p-2 bg-[#e1e1e1]"
+          required
         />
       </div>
 
       <div>
         <label htmlFor="projectDuration" className="block font-bold mb-1">
-          Project Duration (in Months)
+          Project Duration* (in Months)
         </label>
         <input
           type="number"
@@ -48,18 +50,20 @@ const ProjectForm = () => {
           id="projectDuration"
           className="w-3/5 rounded-xl border-2 border-gray-300 p-2 bg-[#e1e1e1]"
           min={1}
+          required
         />
       </div>
 
       <div>
         <label htmlFor="size" className="block font-bold mb-1">
-          Size (sq ft)
+          Size* (sq ft)
         </label>
         <input
           type="text"
           name="size"
           id="size"
           className="w-3/5 rounded-xl border-2 border-gray-300 p-2 bg-[#e1e1e1]"
+          required
         />
       </div>
 

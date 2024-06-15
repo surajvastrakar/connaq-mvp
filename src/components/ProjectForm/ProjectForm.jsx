@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const ProjectForm = ({ submitForm }) => {
+const ProjectForm = ({ submitForm, isLoading }) => {
   const formRef = useRef();
 
   const submitHandler = (event) => {
@@ -71,6 +71,10 @@ const ProjectForm = ({ submitForm }) => {
         <button
           type="submit"
           className="rounded-xl bg-[#03577b] border border-[#03577b] font-semibold text-white px-4 py-1 hover:scale-110 active:bg-white active:text-[#03577b] custom-shadow"
+          disabled={isLoading}
+          style={{
+            cursor: isLoading ? "not-allowed" : "",
+          }}
         >
           Generate
         </button>

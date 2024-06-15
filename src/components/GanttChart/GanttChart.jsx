@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Gantt from "frappe-gantt";
 
 const GanttChart = ({ allTasks }) => {
@@ -20,7 +20,7 @@ const GanttChart = ({ allTasks }) => {
   }, [allTasks]);
 
   return (
-    <div className="gantt-target dark">
+    <div className="gantt-target">
       <svg id="gantt"></svg>
     </div>
   );

@@ -3,10 +3,10 @@ import logo from "/logo.png";
 import comingSoon from "/coming-soon.jpg";
 import GanttChart from "../../components/GanttChart/GanttChart";
 import { tasks } from "../../utils/constant";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Dashboard = () => {
-  const [allTasks, setAllTasks] = useState(tasks);
+  const [allTasks, setAllTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -26,18 +26,30 @@ const Dashboard = () => {
     }
   };
 
+  const scrollableRef = useRef(null);
+  useEffect(() => {
+    const scrollableElement = scrollableRef.current;
+
+    if (scrollableElement) {
+      scrollableElement.scrollLeft = 400;
+    }
+  }, [allTasks]);
+
   return (
     <div className="flex w-full gap-4 h-full">
       <div className="w-1/5">
         <div className="h-full flex flex-col justify-between">
-          <ProjectForm submitForm={submitHandler} />
+          <ProjectForm submitForm={submitHandler} isLoading={isLoading} />
           <a href="https://connaqtech.com/" target="_blank" className="block">
             <img src={logo} alt="logo" />
           </a>
         </div>
       </div>
 
-      <div className="w-[80vw] h-[89vh] rounded-s-xl overflow-auto text-black scrollbar">
+      <div
+        className="w-[80vw] h-[89vh] rounded-s-xl overflow-auto text-black bg-white scrollbar"
+        ref={scrollableRef}
+      >
         {isLoading && (
           <div className="h-full bg-white content-center">
             <div className="flex items-center justify-center">
@@ -52,9 +64,23 @@ const Dashboard = () => {
             <p className="text-center">Please try again</p>
           </div>
         )}
-        <div className="w-full  bg-white">
-          {!isLoading && !error && <GanttChart allTasks={allTasks} />}
-        </div>
+
+        {!allTasks.length && (
+          <div className="h-full bg-white content-center text-center">
+            <label
+              htmlFor="projectDes"
+              className="font-semibold text-2xl cursor-pointer text-primary hover:underline"
+            >
+              Generate Gantt Chart
+            </label>
+          </div>
+        )}
+
+        {allTasks.length && !isLoading && !error && (
+          <div className="w-full bg-white">
+            <GanttChart allTasks={allTasks} />
+          </div>
+        )}
       </div>
     </div>
   );

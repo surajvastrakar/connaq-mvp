@@ -27,3 +27,6 @@
   border-radius: 1rem;
   background-color: #cdcad3;
 }
+.gantt-container {
+  overflow: unset;
+}

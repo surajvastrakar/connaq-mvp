@@ -2,7 +2,6 @@ import ProjectForm from "../../components/ProjectForm/ProjectForm";
 import logo from "/logo.png";
 import comingSoon from "/coming-soon.jpg";
 import GanttChart from "../../components/GanttChart/GanttChart";
-import { tasks } from "../../utils/constant";
 import { useEffect, useRef, useState } from "react";
 
 const Dashboard = () => {
@@ -13,6 +12,7 @@ const Dashboard = () => {
   const submitHandler = async (formData) => {
     try {
       setIsLoading(true);
+      setError(false);
       const res = await fetch(
         `https://connaq-llm-rwns2svoua-uc.a.run.app/api/process/?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
       );
@@ -65,7 +65,7 @@ const Dashboard = () => {
           </div>
         )}
 
-        {!allTasks.length && (
+        {!allTasks.length && !isLoading && !error && (
           <div className="h-full bg-white content-center text-center">
             <label
               htmlFor="projectDes"
@@ -75,8 +75,7 @@ const Dashboard = () => {
             </label>
           </div>
         )}
-
-        {allTasks.length && !isLoading && !error && (
+        {!!allTasks.length && !isLoading && !error && (
           <div className="w-full bg-white">
             <GanttChart allTasks={allTasks} />
           </div>

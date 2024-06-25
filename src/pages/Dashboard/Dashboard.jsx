@@ -16,7 +16,7 @@ const Dashboard = () => {
 
       // api without description
       const res = await fetch(
-        `https://connaq-llm-rwns2svoua-uc.a.run.app/api/process/?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
+        `https://connaq-jim-rwns2svoua-uc.a.run.app/api/process?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
       );
 
       // const res = await fetch(

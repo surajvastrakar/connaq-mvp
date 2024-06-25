@@ -14,11 +14,16 @@ const Dashboard = () => {
       setIsLoading(true);
       setError(false);
 
-      // api without description
       const res = await fetch(
-        `https://connaq-jim-rwns2svoua-uc.a.run.app/api/process?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
+        `https://connaq-llm-rwns2svoua-uc.a.run.app/api/process/?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
       );
 
+      // api without description
+      // const res = await fetch(
+      //   `https://connaq-jim-rwns2svoua-uc.a.run.app/api/process?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
+      // );
+
+      // api with description
       // const res = await fetch(
       //   `https://connaq-feats-rwns2svoua-uc.a.run.app/api/process?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}&description=${formData.projectDes}`
       // );

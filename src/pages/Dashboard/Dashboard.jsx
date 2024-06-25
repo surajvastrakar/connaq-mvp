@@ -13,8 +13,14 @@ const Dashboard = () => {
     try {
       setIsLoading(true);
       setError(false);
+
+      // api without description
+      // const res = await fetch(
+      //   `https://connaq-llm-rwns2svoua-uc.a.run.app/api/process/?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
+      // );
+
       const res = await fetch(
-        `https://connaq-llm-rwns2svoua-uc.a.run.app/api/process/?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
+        `https://connaq-feats-rwns2svoua-uc.a.run.app/api/process?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}&description=${formData.projectDes}`
       );
       const data = await res.json();
       setAllTasks(data.result);

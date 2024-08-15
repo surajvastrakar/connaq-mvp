@@ -14,19 +14,8 @@ const Dashboard = () => {
       setIsLoading(true);
       setError(false);
 
-      // old api
-      // const res = await fetch(
-      //   `https://connaq-llm-rwns2svoua-uc.a.run.app/api/process/?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
-      // );
-
-      // api without description
-      // const res = await fetch(
-      //   `https://connaq-jim-rwns2svoua-uc.a.run.app/api/process/?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}`
-      // );
-
-      // api with description
       const res = await fetch(
-        `https://connaq-jim-rwns2svoua-uc.a.run.app/api/process/?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}&description=${formData.projectDes}`
+        `https://connaq-deploy-rwns2svoua-uc.a.run.app/api/process/?project_size=${formData.size}&project_duration=${formData.projectDuration}&start_date=${formData.startDate}&description=${formData.projectDes}`
       );
 
       const data = await res.json();
